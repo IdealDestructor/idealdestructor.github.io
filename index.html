@@ -143,9 +143,8 @@
 						</a>
 					</li>
 					<li style="display: inline-block;">
-						<a href="javascript:;"  class="social weixin">
+						<a href="javascript:;"  class="weixin">
 							<i class="iconfont icon-wechat"></i>
-							<img class="qrcode" src="https://idealdestructorcom.oss-cn-beijing.aliyuncs.com/qrcode_for_gh_769c3041cc75_258_wps%E5%9B%BE%E7%89%87.jpg" alt="微信公众号">
 						</a>
 					</li>
 					<li style="display: inline-block;">
@@ -160,31 +159,30 @@
 		<script></script>
 <style>
 	
-	.weixin {
-	position: relative;
+	/*微信二维码*/
+	.weixin{
+	position:relative;
 	}
-	
-	.weixin img.qrcode {
+	.weixin::after{
+	content: url(qrcode.jpg);
 	position: absolute;
-	z-index: 99;
-	top: -135px;
 	right: -28px;
-	width: 7.5rem;
-	max-width: none;
-	height: 7.5rem;
-	transform: scale(0);
+	top: -135px;
+	z-index: 99;
+	width:120px;
+	height: 120px;
+	border: 5px solid #0095ba;
+	border-radius: 4px;
 	transform-origin: top right;
+	transform: scale(0);
 	opacity: 0;
-	border: .3125rem solid #0085ba;
-	border-radius: .25rem;
 	-webkit-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
-	
 	}
 	
-	.weixin:hover img.qrcode {
-	transform: scale(1);
+	.weixin:hover::after{
+	transform:scale(1);
 	opacity: 1;
 	}
 </style>
