@@ -25,7 +25,7 @@
 		<meta name="twitter:description" content="析构理想 | ~Ideal() IDEAL DESTRUCTOR">
 		<meta property="twitter:image" content="apple-touch-icon.png">
 		<link href="css/main-26d6a06028.css" rel="stylesheet">
-		<link href="//at.alicdn.com/t/font_1740054_fz3nrkuxpqa.css" rel="stylesheet" type="text/css">
+		<!-- <link href="font/iconfont.css" rel="stylesheet" type="text/css"> -->
 		<script>
 			window.addEventListener('DOMContentLoaded', function() {
 				var toggle = function() {
@@ -120,36 +120,36 @@
 			</nav>
 		</main>
 		<footer>
-			<div style="margin-bottom:10px;">
-				<ul style="display:inline;">
+			<div style="margin-bottom:10px;text-align: center;">
+				<ul style="display:inline;height: 16px;text-align: center;margin-left:-38px">
 					<li style="display: inline-block;">
 						<a href="https://www.facebook.com/IdealDestructor" target="_blank">
-							<icon class="iconfont icon-facebook"></icon>
+							<img class="svg" src="font/facebook.svg"><!-- <i class="iconfont icon-facebook"></i> -->
 						</a>
 					</li>
 					<li style="display: inline-block;">
 						<a href="https://twitter.com/IdealDestructor" target="_blank">
-							<icon class="iconfont icon-twitter"></icon>
+							<img class="svg" src="font/twitter.svg"><!-- <i class="iconfont icon-twitter"></i> -->
 						</a>
 					</li>
 					<li style="display: inline-block;">
 						<a href="https://instagram.com/IdealDestructor/" target="_blank">
-							<icon class="iconfont icon-instagram"></icon>
+							<img class="svg" src="font/instagram.svg"><!-- <i class="iconfont icon-instagram"></i> -->
 						</a>
 					</li>
 					<li style="display: inline-block;">
 						<a href="https://github.com/IdealDestructor/" target="_blank">
-							<icon class="iconfont icon-github"></icon>
+							<img class="svg" src="font/github.svg"><!-- <i class="iconfont icon-github"></i> -->
 						</a>
 					</li>
 					<li style="display: inline-block;">
 						<a href="javascript:;"  class="weixin">
-							<icon class="iconfont icon-wechat"></icon>
+							<img class="svg" src="font/wechat.svg"><!-- <i class="iconfont icon-wechat"></i> -->
 						</a>
 					</li>
 					<li style="display: inline-block;">
 						<a href="http://www.weibo.com/6019347563" target="_blank">
-							<i class="iconfont icon-weibo"></icon>
+							<img class="svg" src="font/weibo.svg"><!-- <i class="iconfont icon-weibo"></i> -->
 						</a>
 					</li>
 				</ul>
@@ -158,7 +158,13 @@
 		</footer>
 		<script></script>
 <style>
-	
+	.svg{
+		width: 16px;
+		height: 16px;
+		opacity: 0.8;
+		margin-left: 6px;
+		margin-right: 6px;
+	}
 	/*微信二维码*/
 	.weixin{
 	position:relative;
@@ -167,10 +173,10 @@
 	content: url(qrcode.jpg);
 	position: absolute;
 	right: -28px;
-	top: -135px;
+	top: -285px;
 	z-index: 99;
-	width:120px;
-	height: 120px;
+	width:40px;
+	height: 40px;
 	border: 5px solid #0095ba;
 	border-radius: 4px;
 	transform-origin: top right;
