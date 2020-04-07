@@ -1,76 +1,192 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>析构理想 | ~IDEAL()</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png?v=yyLyaqbyRG">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png?v=yyLyaqbyRG">
-<link rel="manifest" href="./site.webmanifest?v=yyLyaqbyRG">
-<link rel="mask-icon" href="./safari-pinned-tab.svg?v=yyLyaqbyRG" color="#505050">
-<link rel="shortcut icon" href="./favicon.ico?v=yyLyaqbyRG">
-<meta name="apple-mobile-web-app-title" content="析构理想 | ~Ideal()">
-<meta name="application-name" content="析构理想 | ~Ideal()">
-<meta name="msapplication-TileColor" content="#f1f5fa">
-<meta name="theme-color" content="#ffffff">
-<meta name="description" content="析构理想 | ~Ideal() IDEAL DESTRUCTOR">
-<meta name="keywords" content="析构理想,Francis,Music,blog,C++">
-<meta property="og:type" content="website">
-<meta property="og:title" content="析构理想 | ~Ideal()">
-<meta property="og:url" content="https://www.idealdestructor.com">
-<meta property="og:image" content="apple-touch-icon.png">
-<meta property="og:site_name" content="析构理想 | ~Ideal()">
-<meta property="og:description" content="析构理想 | ~Ideal()。IDEAL DESTRUCTOR">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="析构理想 | ~Ideal()">
-<meta name="twitter:description" content="析构理想 | ~Ideal()。IDEAL DESTRUCTOR">
-<meta property="twitter:image" content="apple-touch-icon.png">
-<link href="css/main-26d6a06028.css" rel="stylesheet">
-<script>window.addEventListener('DOMContentLoaded',function () {var toggle =function () {var el =document.body;if (el.classList.contains('toggle'))
-el.classList.remove('toggle');else
-el.classList.add('toggle');}
-document.getElementsByClassName('toggle-button')[0].addEventListener('click',toggle);if(!('ontouchstart' in document)){setTimeout(function(){document.body.classList.add('toggle');},500);}
-});</script>
-</head>
-<body>
-<div id="bg">
-<script>window.loadedVideo =[];window.loopStarted =false;window.currentVideo =-1;var loop =function () {var next =window.currentVideo + 1;if (next >=window.loadedVideo.length) {next =0;}
- if (window.currentVideo !==-1) {var currentel =window.loadedVideo[window.currentVideo];currentel.classList.remove('current');}
- var nextel =window.loadedVideo[next];nextel.currentTime =0;nextel.classList.add('current');window.currentVideo =next;setTimeout(loop,8500);}
-window.registerVideo =function (el) {window.loadedVideo.push(el);if (!window.loopStarted &&window.loadedVideo.length >=2) {loop();window.loopStarted =true;}
-}
-</script>
-<video onloadeddata="window.registerVideo(this)" src="https://static.idealdestructor.com/file/video/jellyfish/slice_3_muted.mp4" autoplay loop muted playsinline></video>
-<video onloadeddata="window.registerVideo(this)" src="https://static.idealdestructor.com/file/video/jellyfish/slice_4_muted.mp4" autoplay loop muted playsinline></video>
-<video onloadeddata="window.registerVideo(this)" src="https://static.idealdestructor.com/file/video/jellyfish/slice_5_muted.mp4" autoplay loop muted playsinline></video>
-</div>
-<header>
-<div class="container">
-<a class="brand" href="https://www.idealdestructor.com" target="_self">析构理想</a>
-<span class="social">
+	<head>
+		<title>析构理想 | ~IDEAL()</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="manifest" href="./site.webmanifest?v=yyLyaqbyRG">
+		<link rel="mask-icon" href="./safari-pinned-tab.svg?v=yyLyaqbyRG" color="#505050">
+		<link rel="shortcut icon" href="./favicon.ico?v=yyLyaqbyRG">
+		<meta name="apple-mobile-web-app-title" content="析构理想 | ~Ideal()">
+		<meta name="application-name" content="析构理想 | ~Ideal()">
+		<meta name="msapplication-TileColor" content="#f1f5fa">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="description" content="析构理想 | ~Ideal() IDEAL DESTRUCTOR">
+		<meta name="keywords" content="析构理想,Francis,Music,blog,C++">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="析构理想 | ~Ideal()">
+		<meta property="og:url" content="https://www.idealdestructor.com">
+		<meta property="og:image" content="apple-touch-icon.png">
+		<meta property="og:site_name" content="析构理想 | ~Ideal()">
+		<meta property="og:description" content="析构理想 | ~Ideal()。IDEAL DESTRUCTOR">
+		<meta property="og:locale" content="zh-CN">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="析构理想 | ~Ideal()">
+		<meta name="twitter:description" content="析构理想 | ~Ideal() IDEAL DESTRUCTOR">
+		<meta property="twitter:image" content="apple-touch-icon.png">
+		<link href="css/main-26d6a06028.css" rel="stylesheet">
+		<link href="//at.alicdn.com/t/font_1740054_fz3nrkuxpqa.css" rel="stylesheet" type="text/css">
+		<script>
+			window.addEventListener('DOMContentLoaded', function() {
+				var toggle = function() {
+					var el = document.body;
+					if (el.classList.contains('toggle'))
+						el.classList.remove('toggle');
+					else
+						el.classList.add('toggle');
+				}
+				document.getElementsByClassName('toggle-button')[0].addEventListener('click', toggle);
+				if (!('ontouchstart' in document)) {
+					setTimeout(function() {
+						document.body.classList.add('toggle');
+					}, 500);
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="bg">
+			<script>
+				window.loadedVideo = [];
+				window.loopStarted = false;
+				window.currentVideo = -1;
+				var loop = function() {
+					var next = window.currentVideo + 1;
+					if (next >= window.loadedVideo.length) {
+						next = 0;
+					}
+					if (window.currentVideo !== -1) {
+						var currentel = window.loadedVideo[window.currentVideo];
+						currentel.classList.remove('current');
+					}
+					var nextel = window.loadedVideo[next];
+					nextel.currentTime = 0;
+					nextel.classList.add('current');
+					window.currentVideo = next;
+					setTimeout(loop, 8500);
+				}
+				window.registerVideo = function(el) {
+					window.loadedVideo.push(el);
+					if (!window.loopStarted && window.loadedVideo.length >= 2) {
+						loop();
+						window.loopStarted = true;
+					}
+				}
+			</script>
+			<video onloadeddata="window.registerVideo(this)" src="https://idealdestructorcom.oss-cn-beijing.aliyuncs.com/Cyberfunk2077cut1.mp4"
+			 autoplay loop muted playsinline></video>
+			<video onloadeddata="window.registerVideo(this)" src="https://idealdestructorcom.oss-cn-beijing.aliyuncs.com/Cyberfunk2077cut2.mp4"
+			 autoplay loop muted playsinline></video>
+			<video onloadeddata="window.registerVideo(this)" src="https://idealdestructorcom.oss-cn-beijing.aliyuncs.com/Cyberfunk2077cut3.mp4"
+			 autoplay loop muted playsinline></video>
+		</div>
+		<header>
+			<div class="container">
+				<a class="brand" href="https://www.idealdestructor.com" target="_self"></a>
+				<!-- <span class="social">
 <a style="color: #fafafa" target="_blank" href="https://twitter.com/IdealDestructor"><i class="icon icon-twitter"></i></a>
-<a style="color: #fafafa" target="_blank" href="https://weibo.com/6019347563/profile"><i class="icon icon-weibo"></i></a>
+<a style="color: #fafafa" target="_blank" href="https://weibo.com/6019347563"><i class="icon icon-weibo"></i></a>
 <a style="color: #fafafa" target="_blank" href="https://github.com/IdealDestructor"><i class="icon icon-github"></i></a>
-</span>
-</div>
-</header>
-<main>
-<div class="container">
-<p class="headline brand">IDEAL DESTRUCTOR</p>
-</div>
-<nav id="ctrl">
-<a href="https://blog.idealdestructor.com" class="brand link iframe" target="_blank">博客</a>
-<a href="https://lab.idealdestructor.com" class="brand link iframe" target="_blank">实验室</a>
-<a href="https://wiki.idealdestructor.com" class="brand link iframe" target="_blank">Wiki</a>
-<!-- <a href="https://t.me/triple_null" class="brand link" target="_blank">无消息</a> -->
-<i class="toggle-button"></i>
-</nav>
-</main>
-<footer>
-<a href="https://deqiang.wang" target="_blank">FrancisWang's Blog</a>  &nbsp;&nbsp; <a href="https://www.idealdestructor.com" target="_blank"><img class="sponsor" src="logo.png" alt=""></a> &nbsp;&nbsp; <a href="http://beian.miit.gov.cn" target="_blank">津ICP备16009041号-5</a>
-</footer>
-<script></script>
-<script>var _hmt =_hmt ||[];(function() {var hm =document.createElement("script");hm.src ="https://hm.baidu.com/hm.js?c3089a7db81adb0bffbb603ab8834108";var s =document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script>
-</body>
+</span> -->
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<p style="line-height: 1;"><img class="sponsor" src="logo.png" alt=""><br /><a style="font-style: italic;font-size: small;margin-top:-1">I
+						d e a l &nbsp;D e s t r u c t o r</a></p>
+				<!-- <div class="nc-landing-navi">
+      <ul>
+        <li class="menu-magazine">
+          <a href="/technology/" data-channel="technology">TECHNOLOGY</a>
+        </li>
+        <li class="menu-magazine">
+          <a href="/lifestyle/" data-channel="lifestyle">LIFESTYLE</a>
+        </li>
+       <li class="menu-magazine">
+          <a href="/magazine/" data-channel="magazine">MAGAZINE</a>
+        </li>
+        <li class="menu-magazine">
+          <a href="http://deqiang.wang" data-channel="blog">BLOG</a>
+        </li>
+      </ul>
+    </div> -->
+			</div>
+			<nav id="ctrl">
+				<a href="https://blog.idealdestructor.com" class="brand link iframe" target="_blank">Blog</a>
+				<a href="https://lab.idealdestructor.com" class="brand link iframe" target="_blank">Lab</a>
+				<a href="https://wiki.idealdestructor.com" class="brand link iframe" target="_blank">Wiki</a>
+				<!-- <a href="https://t.me/triple_null" class="brand link" target="_blank">无消息</a> -->
+				<i class="toggle-button"></i>
+			</nav>
+		</main>
+		<footer>
+			<div style="margin-bottom:10px;">
+				<ul style="display:inline;">
+					<li style="display: inline-block;">
+						<a href="https://www.facebook.com/IdealDestructor" target="_blank">
+							<i class="iconfont icon-facebook"></i>
+						</a>
+					</li>
+					<li style="display: inline-block;">
+						<a href="https://twitter.com/IdealDestructor" target="_blank">
+							<i class="iconfont icon-twitter"></i>
+						</a>
+					</li>
+					<li style="display: inline-block;">
+						<a href="https://instagram.com/IdealDestructor/" target="_blank">
+							<i class="iconfont icon-instagram"></i>
+						</a>
+					</li>
+					<li style="display: inline-block;">
+						<a href="https://github.com/IdealDestructor/" target="_blank">
+							<i class="iconfont icon-github"></i>
+						</a>
+					</li>
+					<li style="display: inline-block;">
+						<a href="javascript:;"  class="social weixin">
+							<i class="iconfont icon-wechat"></i>
+							<img class="qrcode" src="https://idealdestructorcom.oss-cn-beijing.aliyuncs.com/qrcode_for_gh_769c3041cc75_258_wps%E5%9B%BE%E7%89%87.jpg" alt="微信公众号">
+						</a>
+					</li>
+					<li style="display: inline-block;">
+						<a href="http://www.weibo.com/6019347563" target="_blank">
+							<i class="iconfont icon-weibo"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a href="http://beian.miit.gov.cn" target="_blank" style="font-size: 12px;opacity: 0.5;">津ICP备16009041号-5</a>
+		</footer>
+		<script></script>
+<style>
+	
+	.weixin {
+	position: relative;
+	}
+	
+	.weixin img.qrcode {
+	position: absolute;
+	z-index: 99;
+	top: -135px;
+	right: -28px;
+	width: 7.5rem;
+	max-width: none;
+	height: 7.5rem;
+	transform: scale(0);
+	transform-origin: top right;
+	opacity: 0;
+	border: .3125rem solid #0085ba;
+	border-radius: .25rem;
+	-webkit-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	
+	}
+	
+	.weixin:hover img.qrcode {
+	transform: scale(1);
+	opacity: 1;
+	}
+</style>
+	</body>
 </html>
