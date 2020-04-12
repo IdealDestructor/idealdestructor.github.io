@@ -408,8 +408,8 @@ nav#ctrl>:not(.toggle-button) {
 }
 
 nav#ctrl>:not(.toggle-button):hover {
-	background: #fafafa;
-	color: #000
+/* 	background: #fafafa;
+	color: #000 */
 }
 
 nav#ctrl>:not(.toggle-button):nth-of-type(1) {
