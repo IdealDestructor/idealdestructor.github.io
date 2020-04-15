@@ -75,16 +75,15 @@
 					}
 				}
 			</script>
-			<video onloadeddata="window.registerVideo(this)" src="evecut1.mov" autoplay loop
-			 muted playsinline></video>
-			<video onloadeddata="window.registerVideo(this)" src="evecut2.mov" autoplay loop
+			<video onloadeddata="window.registerVideo(this)" src="back.mp4" autoplay loop muted playsinline></video>
+			<!-- <video onloadeddata="window.registerVideo(this)" src="evecut2.mov" autoplay loop
 			 muted playsinline></video>
 			<video onloadeddata="window.registerVideo(this)" src="evecut3.mov" autoplay loop
 			 muted playsinline></video>
 			<video onloadeddata="window.registerVideo(this)" src="evecut4.mov" autoplay loop
 			 muted playsinline></video>
 			<video onloadeddata="window.registerVideo(this)" src="evecut5.mov" autoplay loop
-			 muted playsinline></video>
+			 muted playsinline></video> -->
 		</div>
 		<header>
 			<div class="container">
@@ -125,6 +124,7 @@
       </ul>
     </div> -->
 			</div>
+			<canvas style="z-index: -101;" id="canvas"></canvas>
 			<nav id="ctrl">
 				<a href="http://blog.idealdestructor.com" class="brand link iframe" target="_blank"><img class="svg" style="height: 18px;"
 					 title="Blog" src="font/blog.svg"></a>
@@ -229,6 +229,10 @@
 			.weixin:hover::after {
 				transform: scale(1);
 				opacity: 1;
+			}
+			
+			body {
+			    background: #0c0c0f;
 			}
 		</style>
 
