@@ -69,12 +69,12 @@ html {
 h1 {
   font-size: 40px;
   font-weight: 200;
-  font-family: 'Exo 2', sans-serif;
+  font-family: Hiragino Maru Gothic ProN;
   font-style: italic;
   color: #fff;
   padding: 5px 20px 10px 20px;
   border: 0.4rem solid #fff;
-  border-radius: 0rem;
+/*  border-radius: 0rem;*/
   text-transform: uppercase;
   animation: flicker 1.5s infinite alternate;     
 }
