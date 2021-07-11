@@ -74,7 +74,7 @@ h1 {
   color: #fff;
   padding: 5px 20px 10px 20px;
   border: 0.4rem solid #fff;
-  border-radius: 1rem;
+  border-radius: 0rem;
   text-transform: uppercase;
   animation: flicker 1.5s infinite alternate;     
 }
