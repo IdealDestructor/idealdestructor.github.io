@@ -18,7 +18,7 @@ html {
     text-align: center;
     line-height: 1;
     font-style: italic;
-    color: #97549a;
+    color: while;
     animation: neon1 .08s ease-in-out infinite alternate;
   }
 
@@ -69,7 +69,7 @@ html {
 h1 {
   font-size: 40px;
   font-weight: 200;
-  font-family: Klee;
+  font-family: Hiragino Maru Gothic ProN;
   font-style: italic;
   color: #fff;
   padding: 5px 20px 10px 20px;
