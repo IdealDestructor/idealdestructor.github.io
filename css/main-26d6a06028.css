@@ -313,7 +313,7 @@ main .container {
 
 @media screen and (max-width:767px) {
 	main .container {
-		top: 25%
+		top: 20%
 	}
 }
 
