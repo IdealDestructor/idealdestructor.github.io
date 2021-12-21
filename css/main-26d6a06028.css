@@ -346,8 +346,8 @@ main p {
 	object-fit: cover;
 	background-size: cover;
 	background-position: center;
-	-webkit-filter: brightness(.5);
-	filter: brightness(.5);
+	/* -webkit-filter: brightness(.5);
+	filter: brightness(.5); */
 	-webkit-transition: 1s ease opacity;
 	transition: 1s ease opacity
 }
@@ -360,13 +360,13 @@ main p {
 	top: 0;
 	-o-object-fit: cover;
 	object-fit: cover;
-	-webkit-transition: 1.5s ease opacity;
-	transition: 1.5s ease opacity;
-	opacity: 0
+	/* -webkit-transition: 1.5s ease opacity; */
+	/* transition: 1.5s ease opacity; */
+	opacity: 1
 }
 
 #bg video.current {
-	opacity: 1
+	/* opacity: 1 */
 }
 
 nav#ctrl {
