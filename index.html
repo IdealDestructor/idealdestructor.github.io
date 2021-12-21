@@ -35,6 +35,14 @@
 	<script>
 		window.addEventListener('DOMContentLoaded', function () {
 			var toggle = function () {
+				var audio = document.getElementById("music");
+				if (audio.paused) { //判断当前的状态是否为暂停，若是则点击播放，否则暂停
+         			audio.play();
+				}
+				var video = document.getElementById("mp4");
+				if (video.paused) { //判断当前的状态是否为暂停，若是则点击播放，否则暂停
+					video.play();
+				}
 				var el = document.body;
 				if (el.classList.contains('toggle'))
 					el.classList.remove('toggle');
@@ -58,7 +66,7 @@
 		<!-- <script src='js/TweenMax.min.js'></script> -->
 		<!-- <script src="js/script.js"></script> -->
 		<div id="bg">
-			<audio controls autoplay loop style="width: 30px;height:30px;z-index: 1000;opacity:0.3">
+			<audio autoplay loop id="music">
 				<source src="https://idealdestructor.com/OutofTime.mp3">
 				</source>
 			</audio>
@@ -90,7 +98,7 @@
 					}
 				}
 			</script> -->
-			<video preload="auto" autoplay muted loop>
+			<video preload="auto" autoplay muted loop id="mp4">
 				<source src="./1.mp4" type="video/mp4">
 				</source>
 			</video>
@@ -251,15 +259,7 @@
 		</footer>
 		<style>
 			.audio {
-				width: 45px;
-				position: fixed;
-				top: 65px;
-				left: 85%;
-				z-index: 100;
-				filter: alpha(opacity=30);
-				-moz-opacity: .3;
-				-khtml-opacity: .3;
-				opacity: .3
+				opacity: 0
 			}
 
 			@font-face {
