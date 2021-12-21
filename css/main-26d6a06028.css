@@ -408,7 +408,7 @@ nav#ctrl>:not(.toggle-button) {
 }
 
 nav#ctrl>:not(.toggle-button):hover {
-	background-color: rgb(255, 0, 255);
+	background-color: rgb(255, 0, 234);
 	color: #000
 }
 
