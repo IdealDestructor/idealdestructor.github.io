@@ -31,7 +31,8 @@
       var canvas = document.querySelector("canvas"),
         ctx = canvas.getContext("2d");
 
-      var ww, wh, clipSize;
+      var ww, wh;
+      // 移除 clipSize 变量，因为我们不再需要裁剪
 
       var stars = [];
 
@@ -120,18 +121,12 @@
       };
       window.addEventListener("mousemove", function (e) {
         mouse.x = e.clientX + (Math.random() - 0.5) * 25;
-        mouse.x = Math.min(
-          (ww - clipSize * 2) / 2 + clipSize * 2,
-          Math.max(mouse.x, (ww - clipSize * 2) / 2)
-        );
+        // 移除对 mouse.x 的限制，允许在整个屏幕上移动
         mouse.y = e.clientY + (Math.random() - 0.5) * 25;
       });
       window.addEventListener("touchmove", function (e) {
         mouse.x = e.touches[0].clientX + (Math.random() - 0.5) * 25;
-        mouse.x = Math.min(
-          (ww - clipSize * 2) / 2 + clipSize * 2,
-          Math.max(mouse.x, (ww - clipSize * 2) / 2)
-        );
+        // 移除对 mouse.x 的限制，允许在整个屏幕上移动
         mouse.y = e.touches[0].clientY + (Math.random() - 0.5) * 25;
       });
       window.addEventListener("click", function (e) {
@@ -151,14 +146,12 @@
       function onResize() {
         ww = canvas.width = window.innerWidth;
         wh = canvas.height = window.innerHeight;
-        clipSize = Math.min(ww / 2 - 4, wh / 2 - 4);
+        // 移除 clipSize 的设置
         ctx.shadowBlur = 20;
         if (navigator.userAgent.toLowerCase().indexOf("firefox") === -1) {
           ctx.globalCompositeOperation = "screen";
         }
-        //Clip circle
-        ctx.arc(ww / 2, wh / 2, clipSize, 0, Math.PI * 2, false);
-        ctx.clip();
+        // 移除裁剪圆形的代码
       }
 
       var prevA = 0;
@@ -167,10 +160,9 @@
         requestAnimationFrame(render);
         ctx.clearRect(0, 0, ww, wh);
 
-        ctx.beginPath();
-        ctx.arc(ww / 2, wh / 2, clipSize, 0, Math.PI * 2, false);
+        // 将背景直接绘制为全屏矩形，而不是圆形
         ctx.fillStyle = gradient;
-        ctx.fill();
+        ctx.fillRect(0, 0, ww, wh);
 
         if (a - prevA > 20) {
           stars.push(new Star(mouse.x, mouse.y));
@@ -193,7 +185,14 @@
       }
       onResize();
 
-      var gradient = ctx.createRadialGradient(0, 0, 200, 100, wh / 2, ww);
+      var gradient = ctx.createRadialGradient(
+        ww / 2,
+        wh / 2,
+        0,
+        ww / 2,
+        wh / 2,
+        Math.max(ww, wh)
+      );
       gradient.addColorStop(0, "#010810");
       gradient.addColorStop(1, "#2a4770");
 
