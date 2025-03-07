@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starry | The entire universe will twinkle for you.</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        font-family: "Arial", sans-serif;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50%;
+        animation: twinkle 2s infinite;
+        z-index: -1;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        letter-spacing: 4px;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+        opacity: 0.8;
+        font-style: italic;
+      }
+
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 900px;
+        padding: 0 20px;
+        width: 100%;
+        justify-items: center;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 400px;
+        height: 250px;
+        border-radius: 20px;
+        backdrop-filter: blur(1px);
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .card-icon {
+        font-size: 4rem;
+        margin-bottom: 25px;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cards-container">
+      <a href="star.html" class="card">
+        <div class="card-icon">✨</div>
+        <div class="card-title">Stars are never sleeping.</div>
+      </a>
+
+      <a href="solar.html" class="card">
+        <div class="card-icon">🪐</div>
+        <div class="card-title">Solar for you.</div>
+      </a>
+
+      <a href="meteor.html" class="card">
+        <div class="card-icon">☄️</div>
+        <div class="card-title">Meteors are looking for you, too.</div>
+      </a>
+
+      <a href="cute.html" class="card">
+        <div class="card-icon">🌟</div>
+        <div class="card-title">
+          You are so cute that you have stars in your fingertips.
+        </div>
+      </a>
+    </div>
+
+    <script>
+      // Generate stars
+      for (let i = 0; i < 150; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        document.body.appendChild(star);
+      }
+    </script>
+  </body>
+</html>
