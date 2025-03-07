@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starry | The entire universe will twinkle for you.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Quicksand:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         margin: 0;
         overflow: hidden;
         background-color: #000;
-        font-family: "Arial", sans-serif;
+        font-family: "Quicksand", sans-serif;
         color: white;
         display: flex;
         flex-direction: column;
@@ -39,23 +45,33 @@
       }
 
       h1 {
-        font-size: 3.5rem;
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 600;
         margin-bottom: 10px;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        letter-spacing: 4px;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+          0 0 30px rgba(100, 180, 255, 0.3);
+        letter-spacing: 6px;
+        background: linear-gradient(to right, #ffffff, #a9c4ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
 
       .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 300;
         margin-bottom: 50px;
         opacity: 0.8;
         font-style: italic;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(100, 180, 255, 0.5);
       }
 
       .cards-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 40px;
         max-width: 900px;
         padding: 0 20px;
         width: 100%;
@@ -67,38 +83,117 @@
         max-width: 400px;
         height: 250px;
         border-radius: 20px;
-        backdrop-filter: blur(1px);
-        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.07);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         cursor: pointer;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         text-decoration: none;
         color: white;
         padding: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0) 40%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0) 60%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(30deg);
+        transition: transform 0.7s ease-in-out;
+        opacity: 0;
       }
 
       .card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-15px) scale(1.03);
         background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6),
+          0 0 20px rgba(100, 180, 255, 0.4);
         border: 1px solid rgba(255, 255, 255, 0.3);
       }
 
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .card:hover::after {
+        opacity: 1;
+        transform: rotate(30deg) translate(120%, 120%);
+      }
+
+      .card:hover .card-icon {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      }
+
       .card-icon {
-        font-size: 4rem;
+        font-size: 4.5rem;
         margin-bottom: 25px;
+        transition: all 0.5s ease;
+        position: relative;
+        z-index: 2;
       }
 
       .card-title {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 500;
         text-align: center;
         letter-spacing: 1px;
         line-height: 1.4;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .card:hover .card-title {
+        transform: scale(1.05);
+        text-shadow: 0 0 8px rgba(100, 180, 255, 0.6);
+      }
+
+      @media (max-width: 768px) {
+        .cards-container {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        .subtitle {
+          font-size: 1.1rem;
+        }
       }
     </style>
   </head>
@@ -129,12 +224,28 @@
 
     <script>
       // Generate stars
-      for (let i = 0; i < 150; i++) {
+      for (let i = 0; i < 200; i++) {
         const star = document.createElement("div");
         star.className = "star";
+
+        // 随机星星大小
+        const size = Math.random() * 3 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+
+        // 为较大的星星添加发光效果
+        if (size > 2.5) {
+          star.style.boxShadow = "0 0 3px 1px rgba(255, 255, 255, 0.4)";
+        }
+
         star.style.top = `${Math.random() * 100}vh`;
         star.style.left = `${Math.random() * 100}vw`;
-        star.style.animationDelay = `${Math.random() * 2}s`;
+
+        // 随机闪烁速度
+        const duration = 1 + Math.random() * 3;
+        star.style.animationDuration = `${duration}s`;
+
+        star.style.animationDelay = `${Math.random() * 3}s`;
         document.body.appendChild(star);
       }
     </script>
