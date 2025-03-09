@@ -392,8 +392,8 @@ nav#ctrl {
 
 @media screen and (max-width: 767px) {
   nav#ctrl {
-    right: 2rem;
-    bottom: 8rem;
+    right: 1.8rem;
+    bottom: 10rem;
   }
 }
 
@@ -540,7 +540,7 @@ nav#ctrl a.link {
   }
 
   footer {
-    margin-bottom: 6rem !important;
+    margin-bottom: 8rem !important;
   }
 
   footer,
