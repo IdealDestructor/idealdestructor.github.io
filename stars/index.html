@@ -13,7 +13,8 @@
     <style>
       body {
         margin: 0;
-        overflow: hidden;
+        overflow-x: hidden; /* 只隐藏水平滚动 */
+        overflow-y: auto; /* 允许垂直滚动 */
         background-color: #000;
         font-family: "Quicksand", sans-serif;
         color: white;
@@ -21,7 +22,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        min-height: 100vh; /* 使用最小高度而不是固定高度 */
+        padding: 40px 0; /* 添加上下内边距 */
+        box-sizing: border-box;
       }
 
       .star {
@@ -56,6 +59,8 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        text-align: center;
+        padding: 0 20px;
       }
 
       .subtitle {
@@ -63,9 +68,11 @@
         font-weight: 300;
         margin-bottom: 50px;
         opacity: 0.8;
-        font-style: italic;
+        /* font-style: italic; */
         letter-spacing: 1px;
         text-shadow: 0 0 10px rgba(100, 180, 255, 0.5);
+        text-align: center;
+        padding: 0 20px;
       }
 
       .cards-container {
@@ -76,6 +83,7 @@
         padding: 0 20px;
         width: 100%;
         justify-items: center;
+        box-sizing: border-box;
       }
 
       .card {
@@ -98,6 +106,7 @@
         padding: 20px;
         overflow: hidden;
         position: relative;
+        box-sizing: border-box;
       }
 
       .card::before {
@@ -182,22 +191,100 @@
         text-shadow: 0 0 8px rgba(100, 180, 255, 0.6);
       }
 
+      /* 改进移动端适配 */
       @media (max-width: 768px) {
         .cards-container {
           grid-template-columns: 1fr;
+          gap: 25px;
+          padding: 0 15px;
+          margin-top: 20px;
+          margin-bottom: 30px; /* 添加底部边距 */
         }
 
         h1 {
-          font-size: 3rem;
+          font-size: 2.5rem;
+          letter-spacing: 3px;
+          margin-bottom: 5px;
         }
 
         .subtitle {
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+
+        .card {
+          height: 200px;
+          padding: 15px;
+        }
+
+        .card-icon {
+          font-size: 3.5rem;
+          margin-bottom: 15px;
+        }
+
+        .card-title {
           font-size: 1.1rem;
+        }
+      }
+
+      /* 添加更小屏幕的适配 */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+          letter-spacing: 2px;
+        }
+
+        .subtitle {
+          font-size: 0.9rem;
+          margin-bottom: 25px;
+        }
+
+        .cards-container {
+          gap: 20px;
+        }
+
+        .card {
+          height: 180px;
+        }
+
+        .card-icon {
+          font-size: 3rem;
+          margin-bottom: 10px;
+        }
+
+        .card-title {
+          font-size: 1rem;
+        }
+      }
+
+      /* 添加触摸设备的悬停效果替代 */
+      @media (hover: none) {
+        .card:active {
+          transform: translateY(-5px) scale(1.02);
+          background: rgba(255, 255, 255, 0.15);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6),
+            0 0 15px rgba(100, 180, 255, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .card:active::before {
+          opacity: 1;
+        }
+
+        .card:active .card-icon {
+          transform: scale(1.1);
+        }
+
+        .card:active .card-title {
+          transform: scale(1.03);
         }
       }
     </style>
   </head>
   <body>
+    <h1>Starry</h1>
+    <div class="subtitle">The entire universe will twinkle for you.</div>
+
     <div class="cards-container">
       <a href="star.html" class="card">
         <div class="card-icon">✨</div>
